@@ -1,0 +1,23 @@
+<Project>
+  <PropertyGroup>
+    <!-- Initial definitions. -->
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    
+    <!-- Path definitions. -->
+    <BaseIntermediateOutputPath>$(MSBuildThisFileDirectory)\build\tmp\$(MSBuildProjectName)</BaseIntermediateOutputPath>
+    <IntermediateOutputPath>$(BaseIntermediateOutputPath)</IntermediateOutputPath>
+    <OutputPath>$(MSBuildThisFileDirectory)\build\bin\$(Configuration)\$(MSBuildProjectName)</OutputPath>
+    
+    <!-- Variable and compile-time constant for the framework identifier. -->
+    <FrameworkIdentifier>$(TargetFramework.TrimEnd('.0123456789'))</FrameworkIdentifier>
+    <DefineConstants>$(DefineConstants);$(FrameworkIdentifier.ToUpper())</DefineConstants>
+	</PropertyGroup>
+
+  <PropertyGroup>
+    <Product>PersonApi</Product>
+    <AssemblyTitle>$(AssemblyName)</AssemblyTitle>
+    <Company>Buy4</Company>
+    <Copyright>Copyright© 2022</Copyright>
+    <VersionPrefix>0.1.0</VersionPrefix>
+  </PropertyGroup>
+</Project>
